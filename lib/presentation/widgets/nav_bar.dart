@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:miladjalali_ir/app/utils/url_helper.dart';
+import 'package:miladjalali_ir/app/util/url_helper.dart';
 import 'package:miladjalali_ir/presentation/controllers/home_controller.dart';
 import 'package:miladjalali_ir/presentation/widgets/rounded_button.dart';
 
-import '../../app/utils/styles.dart';
+import '../../app/util/styles.dart';
 
 class Navbar extends GetResponsiveView<HomeController> {
 
   @override
   Widget desktop() {
-    return Container(
+    return Obx(()=>Container(
       height: 72,
       width: double.infinity,
+      color: controller.navBarSelectedIndex.value==1?Colors.black.withOpacity(0.75):Colors.transparent,
       child: Row(
         children: [
           Expanded(
@@ -39,7 +40,7 @@ class Navbar extends GetResponsiveView<HomeController> {
                     text: TextSpan(
                       text: 'Milad',
                       style: Styles.navBarTextStyle.copyWith(
-                        color: Colors.black.withOpacity(0.75),
+                        color: controller.navBarSelectedIndex.value==1?Colors.white:Colors.black.withOpacity(0.75),
                         fontSize: 18,
                         fontFamily: 'Ubuntu',
                       ),
@@ -67,10 +68,15 @@ class Navbar extends GetResponsiveView<HomeController> {
                   onTap: () {
                     switch (item) {
                       case 'Home':
+                        controller.navBarSelectedIndex.value = controller.items.indexOf(item);
+                        controller.onNavbarItemSelected(controller.navBarSelectedIndex.toInt());
+                        controller.update();
+                        break;
                       case 'About':
-                            controller.navBarSelectedIndex.value = controller.items.indexOf(item);
-                            controller.onNavbarItemSelected(controller.navBarSelectedIndex);
-                            break;
+                        controller.navBarSelectedIndex.value = controller.items.indexOf(item);
+                        controller.onNavbarItemSelected(controller.navBarSelectedIndex.toInt());
+                        controller.update();
+                        break;
                       case 'Resume':
                         break;
                       case 'Blog':
@@ -93,7 +99,7 @@ class Navbar extends GetResponsiveView<HomeController> {
                         style: Styles.navBarTextStyle.copyWith(
                           fontWeight: FontWeight.w500,
                           color: Styles.navBarTextStyle.color?.withOpacity(
-                            controller.navBarSelectedIndex == controller.items.indexOf(item)
+                            controller.navBarSelectedIndex.value == controller.items.indexOf(item)
                                 ? 1.0
                                 : 0.75,
                           ),
@@ -117,7 +123,7 @@ class Navbar extends GetResponsiveView<HomeController> {
           ),
         ],
       ),
-    );
+    ));
   }
 
   @override

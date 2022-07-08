@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:miladjalali_ir/app/utils/url_helper.dart';
+import 'package:miladjalali_ir/app/util/url_helper.dart';
 import 'package:miladjalali_ir/presentation/controllers/home_controller.dart';
 import 'package:miladjalali_ir/presentation/widgets/rounded_button.dart';
 
-import '../../app/utils/styles.dart';
+import '../../app/util/styles.dart';
 
 
 class AppDrawer extends GetView<HomeController>{
@@ -38,7 +38,7 @@ class AppDrawer extends GetView<HomeController>{
                       case 'Home':
                       case 'About':
                             controller.navBarSelectedIndex.value = controller.items.indexOf(item);
-                            controller.onNavbarItemSelected(controller..navBarSelectedIndex);
+                            controller.onNavbarItemSelected(controller.navBarSelectedIndex.toInt());
                         break;
                       case 'Resume':
                         break;

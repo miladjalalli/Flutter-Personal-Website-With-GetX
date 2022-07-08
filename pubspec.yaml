@@ -25,7 +25,6 @@ dependencies:
     sdk: flutter
   get: ^4.1.4
   tuple: ^2.0.0
-  cached_network_image: ^3.1.0
   json_annotation:
   jiffy: ^4.1.0
   shared_preferences: ^2.0.6
@@ -33,6 +32,12 @@ dependencies:
   animated_background: ^2.0.0
   animate_gradient:
   url_launcher: ^6.1.4
+  video_player: ^2.4.5
+  flutter_blurhash: ^0.7.0
+  cached_network_image: ^3.2.1
+  flick_video_player: ^0.5.0
+
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

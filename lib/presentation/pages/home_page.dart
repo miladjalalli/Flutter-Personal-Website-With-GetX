@@ -22,11 +22,11 @@ class HomePage extends GetResponsiveView<HomeController> {
       endDrawer: AppDrawer(),
       body: Stack(
         children: [
-          Container(
+          Obx(() => Container(
             width: Get.width,
             height: Get.height,
             child: controller.pages[controller.selectedIndex.value],
-          ),
+          )),
           Align(
             alignment: Alignment.topCenter,
             child: Navbar(),
@@ -47,11 +47,11 @@ class HomePage extends GetResponsiveView<HomeController> {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
+          Obx(() => Container(
             width: Get.width,
             height: Get.height,
             child: controller.pages[controller.selectedIndex.value],
-          ),
+          )),
           Align(
             alignment: Alignment.topCenter,
             child: Navbar(),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:miladjalali_ir/app/utils/url_helper.dart';
+import 'package:miladjalali_ir/app/util/url_helper.dart';
 import 'package:miladjalali_ir/presentation/controllers/information_controller.dart';
 import 'package:miladjalali_ir/presentation/widgets/hero_images.dart';
 import 'package:miladjalali_ir/presentation/widgets/home_background_painter.dart';

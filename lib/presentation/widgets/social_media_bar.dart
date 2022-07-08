@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:miladjalali_ir/app/utils/url_helper.dart';
+import 'package:miladjalali_ir/app/util/url_helper.dart';
 
 import '../../app/constants/social_icons.dart';
 
