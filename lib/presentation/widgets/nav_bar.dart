@@ -130,6 +130,7 @@ class Navbar extends GetResponsiveView<HomeController> {
   Widget phone() {
     return Container(
       height: 56,
+      color: controller.navBarSelectedIndex.value==1?Colors.black.withOpacity(0.75):Colors.transparent,
       padding: const EdgeInsets.fromLTRB(16,0,16,0),
       child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

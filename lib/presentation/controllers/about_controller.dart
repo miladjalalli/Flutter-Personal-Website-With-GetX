@@ -14,6 +14,7 @@ import 'package:video_player/video_player.dart';
 class AboutController extends GetxController with GetTickerProviderStateMixin {
   AboutController(this._fetchPersonImagesUseCase);
 
+  late int itemSize;
   late int itemsInEachRow;
   late int visibleRowsCount;
 
@@ -32,9 +33,9 @@ class AboutController extends GetxController with GetTickerProviderStateMixin {
   void onInit() {
     super.onInit();
     flickManager = FlickManager(
-      videoPlayerController: VideoPlayerController.network(
-          "https://hajifirouz2.cdn.asset.aparat.com/aparat-video/bfe939ed5cf2e188a7abb8416d50bce645429916-480p.mp4?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjY3MDJhMTNkNzkwZjU0MGEwYmEwNTE1MDBhZDBlZjY3IiwiZXhwIjoxNjU3MjkzMTM1LCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.oECl4VxAPdllqbdNVtL9VA3K68cFJdH3X0MrqfActMc"),
-    autoPlay: false);
+        videoPlayerController: VideoPlayerController.network(
+            "https://hajifirouz2.cdn.asset.aparat.com/aparat-video/bfe939ed5cf2e188a7abb8416d50bce645429916-480p.mp4?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjY3MDJhMTNkNzkwZjU0MGEwYmEwNTE1MDBhZDBlZjY3IiwiZXhwIjoxNjU3MjkzMTM1LCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.oECl4VxAPdllqbdNVtL9VA3K68cFJdH3X0MrqfActMc"),
+        autoPlay: false);
 
     dataManager = VideoPlayerDataManager(flickManager: flickManager, urls: [
       "https://hajifirouz2.cdn.asset.aparat.com/aparat-video/bfe939ed5cf2e188a7abb8416d50bce645429916-480p.mp4?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjY3MDJhMTNkNzkwZjU0MGEwYmEwNTE1MDBhZDBlZjY3IiwiZXhwIjoxNjU3MjkzMTM1LCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.oECl4VxAPdllqbdNVtL9VA3K68cFJdH3X0MrqfActMc"
@@ -43,8 +44,12 @@ class AboutController extends GetxController with GetTickerProviderStateMixin {
 
   @override
   void onReady() {
-    itemsInEachRow = (Get.width / 200).floor();
-    visibleRowsCount = (Get.height / 200).floor();
+    if (Get.width < 768)
+      itemSize = 64;
+    else
+      itemSize = 200;
+    itemsInEachRow = (Get.width / itemSize).floor();
+    visibleRowsCount = (Get.height / itemSize).floor();
 
     fetchPersonImages();
     scrollController.addListener(_scrollListener);
@@ -65,11 +70,14 @@ class AboutController extends GetxController with GetTickerProviderStateMixin {
     images.assignAll(temp!);
     unsplashSearchResponse.value = newResponse;
     addMyPhoto();
+    checkScreenFilledWithImages();
+  }
+
+  checkScreenFilledWithImages(){
     if (images.length < visibleRowsCount * itemsInEachRow) {
       loadMore();
     }
   }
-
   loadMore() async {
     final totalResults = unsplashSearchResponse.value?.total ?? 0;
     if (totalResults / _pageSize <= _currentPage) return;
@@ -80,6 +88,7 @@ class AboutController extends GetxController with GetTickerProviderStateMixin {
     images.addAll(newResponse.results!);
     unsplashSearchResponse.value?.total = newResponse.total;
     _isLoadMore = false;
+    checkScreenFilledWithImages();
   }
 
   void _scrollListener() {
@@ -94,6 +103,11 @@ class AboutController extends GetxController with GetTickerProviderStateMixin {
   void addMyPhoto() {
     int position =
         ((visibleRowsCount / 2).floor() * itemsInEachRow) + Random().nextInt((itemsInEachRow ~/ 2)) + (itemsInEachRow / 2).ceil();
+
+    if (position > images.length) position = Random().nextInt((20));
+
+    position = Random().nextInt((itemsInEachRow)) + itemsInEachRow*2;
+
     images.insert(
         position,
         UnsplashImage(

@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class HeroImage extends StatelessWidget {
@@ -14,8 +12,8 @@ class HeroImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 200,
-      height: 200,
+      width: 250,
+      height: 250,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: Colors.white,
