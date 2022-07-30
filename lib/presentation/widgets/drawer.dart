@@ -12,8 +12,8 @@ class AppDrawer extends GetView<HomeController>{
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Container(
-        color: Colors.lightBlue,
+      child: Obx(()=>Container(
+        color: controller.navBarSelectedIndex.value==1?Colors.black.withOpacity(0.75):Colors.lightBlue,
         child: Stack(
           alignment: Alignment.center,
           children: [
@@ -35,11 +35,6 @@ class AppDrawer extends GetView<HomeController>{
                 return InkWell(
                   onTap: () {
                     switch (item) {
-                      case 'Home':
-                      case 'About':
-                            controller.navBarSelectedIndex.value = controller.items.indexOf(item);
-                            controller.onNavbarItemSelected(controller.navBarSelectedIndex.toInt());
-                        break;
                       case 'Resume':
                         break;
                       case 'Blog':
@@ -48,13 +43,9 @@ class AppDrawer extends GetView<HomeController>{
                         );
                         break;
                       default:
-                      // setState(() {
-                      //   selectedIndex = items.indexOf(item);
-                      // });
-
-                      // if (widget.onItemSelected != null) {
-                      //   widget.onItemSelected(selectedIndex);
-                      // }
+                        controller.navBarSelectedIndex.value = controller.items.indexOf(item);
+                        controller.onNavbarItemSelected(controller.navBarSelectedIndex.toInt());
+                        break;
                     }
 
                     Navigator.pop(context);
@@ -95,7 +86,7 @@ class AppDrawer extends GetView<HomeController>{
             ),
           ],
         ),
-      ),
+      )),
     );
   }
 }

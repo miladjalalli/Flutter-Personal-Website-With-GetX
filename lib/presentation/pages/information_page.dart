@@ -22,7 +22,7 @@ class InformationPage extends GetResponsiveView<InformationController> {
             height: Get.height,
             child: Stack(
               children: [
-                CustomPaint(painter: HomeBackgroundPainter(), size: Size.infinite),
+                CustomPaint(painter: HomeBackgroundPainter(Colors.lightBlue), size: Size.infinite),
                 Row(
                   children: [
                     Expanded(

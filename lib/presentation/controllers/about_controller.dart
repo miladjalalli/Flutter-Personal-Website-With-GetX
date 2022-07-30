@@ -78,6 +78,7 @@ class AboutController extends GetxController with GetTickerProviderStateMixin {
       loadMore();
     }
   }
+
   loadMore() async {
     final totalResults = unsplashSearchResponse.value?.total ?? 0;
     if (totalResults / _pageSize <= _currentPage) return;
@@ -104,9 +105,8 @@ class AboutController extends GetxController with GetTickerProviderStateMixin {
     int position =
         ((visibleRowsCount / 2).floor() * itemsInEachRow) + Random().nextInt((itemsInEachRow ~/ 2)) + (itemsInEachRow / 2).ceil();
 
-    if (position > images.length) position = Random().nextInt((20));
-
-    position = Random().nextInt((itemsInEachRow)) + itemsInEachRow*2;
+    if (position > images.length)
+    position = Random().nextInt(itemsInEachRow) + itemsInEachRow;
 
     images.insert(
         position,

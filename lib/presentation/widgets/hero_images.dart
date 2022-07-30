@@ -12,8 +12,8 @@ class HeroImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 250,
-      height: 250,
+      width: 230,
+      height: 230,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: Colors.white,

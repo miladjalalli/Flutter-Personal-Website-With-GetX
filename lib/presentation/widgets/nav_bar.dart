@@ -8,6 +8,8 @@ import '../../app/util/styles.dart';
 
 class Navbar extends GetResponsiveView<HomeController> {
 
+  Navbar():super(settings: ResponsiveScreenSettings(desktopChangePoint: 1000, tabletChangePoint: 768, watchChangePoint: 300));
+
   @override
   Widget desktop() {
     return Obx(()=>Container(
@@ -67,16 +69,6 @@ class Navbar extends GetResponsiveView<HomeController> {
                 return InkWell(
                   onTap: () {
                     switch (item) {
-                      case 'Home':
-                        controller.navBarSelectedIndex.value = controller.items.indexOf(item);
-                        controller.onNavbarItemSelected(controller.navBarSelectedIndex.toInt());
-                        controller.update();
-                        break;
-                      case 'About':
-                        controller.navBarSelectedIndex.value = controller.items.indexOf(item);
-                        controller.onNavbarItemSelected(controller.navBarSelectedIndex.toInt());
-                        controller.update();
-                        break;
                       case 'Resume':
                         break;
                       case 'Blog':
@@ -85,6 +77,10 @@ class Navbar extends GetResponsiveView<HomeController> {
                         );
                         break;
                       default:
+                        controller.navBarSelectedIndex.value = controller.items.indexOf(item);
+                        controller.onNavbarItemSelected(controller.navBarSelectedIndex.toInt());
+                        controller.update();
+                        break;
                     }
                   },
                   child: item == 'Resume'
@@ -128,8 +124,9 @@ class Navbar extends GetResponsiveView<HomeController> {
 
   @override
   Widget phone() {
-    return Container(
+    return Obx(()=>Container(
       height: 56,
+      width: Get.width,
       color: controller.navBarSelectedIndex.value==1?Colors.black.withOpacity(0.75):Colors.transparent,
       padding: const EdgeInsets.fromLTRB(16,0,16,0),
       child: Row(
@@ -149,8 +146,9 @@ class Navbar extends GetResponsiveView<HomeController> {
             Expanded(child: Text("")),
           ],
         ),
-    )
+    ))
     ;
   }
+
 }
 
