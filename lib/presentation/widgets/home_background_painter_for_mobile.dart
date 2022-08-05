@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class HomeBackgroundPainterForMobile extends CustomPainter {
-  HomeBackgroundPainterForMobile();
+  Color color;
+
+
+  HomeBackgroundPainterForMobile(this.color);
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -14,7 +17,7 @@ class HomeBackgroundPainterForMobile extends CustomPainter {
     path.close();
 
     final paint = Paint()
-      ..color = Colors.lightBlue
+      ..color = color
       ..style = PaintingStyle.fill;
 
     canvas.drawPath(path, paint);

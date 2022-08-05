@@ -145,7 +145,7 @@ class InformationPage extends GetResponsiveView<InformationController> {
             height: Get.height,
             child: Stack(
               children: [
-                CustomPaint(painter: HomeBackgroundPainterForMobile(), size: Size.infinite),
+                CustomPaint(painter: HomeBackgroundPainterForMobile(Colors.lightBlue), size: Size.infinite),
                 Center(
                   child: Column(
                     children: [

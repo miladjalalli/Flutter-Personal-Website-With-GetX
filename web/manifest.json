@@ -1,11 +1,11 @@
 {
-    "name": "miladjalali_ir",
-    "short_name": "miladjalali_ir",
+    "name": "miladjalali.ir",
+    "short_name": "miladjalali.ir",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Milad Jalali Personal Website",
+    "description": "Milad Jalali | Developer, Designer and Teacher",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

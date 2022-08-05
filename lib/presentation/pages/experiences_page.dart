@@ -11,9 +11,17 @@ class ExperiencesPage extends GetResponsiveView<ExperiencesController> {
   Widget desktop() {
     return Scaffold(
       body: Container(
+        color: Colors.grey,
         width: Get.width,
         height: Get.height,
-        child: Text("Projects"),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Experiences"),
+            SizedBox(height: 32,),
+            Text("Not Completed Yet!"),
+          ],
+        ),
       ),
     );
   }
@@ -22,9 +30,17 @@ class ExperiencesPage extends GetResponsiveView<ExperiencesController> {
   Widget phone() {
     return Scaffold(
       body: Container(
+        color: Colors.grey,
         width: Get.width,
         height: Get.height,
-        child: Text("Projects"),
+        child: Center(child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Experiences"),
+            SizedBox(height: 32,),
+            Text("Not Completed Yet!"),
+          ],
+        )),
       ),
     );
   }

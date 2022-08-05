@@ -5,8 +5,6 @@ class Portfolio{
   late String description;
   late List<String> images;
   late String link;
-  late bool showTitle;
-  late bool showDescription;
 
-  Portfolio(this.index, this.title, this.descriptionHeader, this.description, this.images, this.link, this.showTitle, this.showDescription);
+  Portfolio(this.index, this.title, this.descriptionHeader, this.description, this.images, this.link);
 }

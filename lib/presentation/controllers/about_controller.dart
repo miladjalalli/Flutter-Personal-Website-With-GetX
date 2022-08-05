@@ -34,11 +34,11 @@ class AboutController extends GetxController with GetTickerProviderStateMixin {
     super.onInit();
     flickManager = FlickManager(
         videoPlayerController: VideoPlayerController.network(
-            "https://hajifirouz2.cdn.asset.aparat.com/aparat-video/bfe939ed5cf2e188a7abb8416d50bce645429916-480p.mp4?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjY3MDJhMTNkNzkwZjU0MGEwYmEwNTE1MDBhZDBlZjY3IiwiZXhwIjoxNjU3MjkzMTM1LCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.oECl4VxAPdllqbdNVtL9VA3K68cFJdH3X0MrqfActMc"),
+            "https://miladjalali.ir/about_me.mp4"),
         autoPlay: false);
 
     dataManager = VideoPlayerDataManager(flickManager: flickManager, urls: [
-      "https://hajifirouz2.cdn.asset.aparat.com/aparat-video/bfe939ed5cf2e188a7abb8416d50bce645429916-480p.mp4?wmsAuthSign=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbiI6IjY3MDJhMTNkNzkwZjU0MGEwYmEwNTE1MDBhZDBlZjY3IiwiZXhwIjoxNjU3MjkzMTM1LCJpc3MiOiJTYWJhIElkZWEgR1NJRyJ9.oECl4VxAPdllqbdNVtL9VA3K68cFJdH3X0MrqfActMc"
+      "https://miladjalali.ir/about_me.mp4"
     ]);
   }
 
