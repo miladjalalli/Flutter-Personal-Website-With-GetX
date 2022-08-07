@@ -10,6 +10,7 @@ class App extends StatelessWidget {
       initialRoute: "/",
       initialBinding: HomeBinding(),
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(primaryColor: Colors.lightBlue, primaryColorDark: Colors.blue, accentColor: Colors.orange),
       home: HomePage(),
     );
   }

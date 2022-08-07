@@ -25,7 +25,7 @@ class SocialIcons {
       IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData facebook =
       IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData twitter =
+  static const IconData stackOverFlow =
       IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData play_store =
       IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);

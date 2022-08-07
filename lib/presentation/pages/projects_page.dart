@@ -34,7 +34,7 @@ class ProjectsPage extends GetResponsiveView<ProjectsController> {
                           borderRadius: BorderRadius.circular(100),
                         border: Border.all(color: controller.selectedIndex.value==i?Colors.orange:Colors.transparent,width: 2)
                       ),
-                      child: Center(child: Text(i.toString(),style: TextStyle(
+                      child: Center(child: Text((i+1).toString(),style: TextStyle(
                         color: controller.selectedIndex.value==i?Colors.orange:Colors.white,
                         fontSize: controller.selectedIndex.value==i?14:12,
                         fontWeight: controller.selectedIndex.value==i?FontWeight.w600:FontWeight.normal
@@ -79,7 +79,7 @@ class ProjectsPage extends GetResponsiveView<ProjectsController> {
                         borderRadius: BorderRadius.circular(100),
                         border: Border.all(color: controller.selectedIndex.value==i?Colors.orange:Colors.transparent,width: 2)
                     ),
-                    child: Center(child: Text(i.toString(),style: TextStyle(
+                    child: Center(child: Text((i+1).toString(),style: TextStyle(
                         color: controller.selectedIndex.value==i?Colors.orange:Colors.white,
                         fontSize: controller.selectedIndex.value==i?12:10,
                         fontWeight: controller.selectedIndex.value==i?FontWeight.w600:FontWeight.normal

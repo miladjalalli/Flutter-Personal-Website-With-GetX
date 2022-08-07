@@ -96,7 +96,7 @@ class _SocialMediaBarForMobileState extends State<SocialMediaBarForMobile> {
                         UrlHelper.launchUrl('https://stackoverflow.com/users/8349963');
                       },
                       child: Icon(
-                        SocialIcons.twitter,
+                        SocialIcons.stackOverFlow,
                         color: Colors.lightBlue.withOpacity(0.75),
                       ),
                     ),

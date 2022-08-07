@@ -39,7 +39,7 @@ class AppDrawer extends GetView<HomeController>{
                         break;
                       case 'Blog':
                         UrlHelper.launchUrl(
-                          'https://medium.com/@debrahkwesibuabeng2',
+                          'https://medium.com/@miladjalali',
                         );
                         break;
                       default:
