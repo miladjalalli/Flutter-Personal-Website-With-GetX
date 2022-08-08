@@ -1,10 +1,9 @@
 import 'package:fading_images_slider/fading_images_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:mj_image_slider/mj_image_slider.dart';
 import '../../app/util/url_helper.dart';
 import '../../domain/entities/portfolio.dart';
-import 'custom_image_slider.dart';
 import 'home_background_painter.dart';
 import 'typewriter.dart';
 
@@ -95,7 +94,7 @@ class MobilePortfolio extends PortfolioWidget {
                         child: Container(
                           width: Get.height / 2 * 0.5222,
                           height: Get.height / 2,
-                          child: CustomImageSlider(
+                          child: MJImageSlider(
                             images: portfolio.images,
                             useLocalAssetImages: true,
                             duration: Duration(seconds: 3),
@@ -245,7 +244,7 @@ class MobilePortfolio extends PortfolioWidget {
                           height: Get.height / 2,
                           width: Get.height / 2 * 0.5222,
                           decoration: BoxDecoration(color: Colors.grey.shade300, borderRadius: BorderRadius.circular(10)),
-                          child: CustomImageSlider(
+                          child: MJImageSlider(
                             images: portfolio.images,
                             useLocalAssetImages: true,
                             duration: Duration(seconds: 3),
@@ -395,7 +394,7 @@ class WebPortfolio extends PortfolioWidget {
                         child: Container(
                           width: Get.width ,
                           height: Get.width / 4 * 0.7279,
-                          child: CustomImageSlider(
+                          child: MJImageSlider(
                             images: portfolio.images,
                             useLocalAssetImages: true,
                             duration: Duration(seconds: 3),
@@ -550,7 +549,7 @@ class WebPortfolio extends PortfolioWidget {
                             child: Container(
                               width: Get.width ,
                               height: Get.width / 3*2 * 0.7279,
-                              child: CustomImageSlider(
+                              child: MJImageSlider(
                                 images: portfolio.images,
                                 useLocalAssetImages: true,
                                 duration: Duration(seconds: 3),

@@ -1,80 +1,104 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_responsive.dart';
-import 'package:timelines/timelines.dart';
 
 import '../../domain/entities/experience.dart';
+import 'curve_line_painter.dart';
+import 'experience_card_painter.dart';
 
- class ExprienceTimeLineWidget extends GetResponsiveView {
+class ExprienceTimeLineWidget extends GetResponsiveView {
   ExprienceTimeLineWidget(this.experiences);
 
   List<Experience> experiences;
 
   @override
   Widget desktop() {
-    return Flexible(
-      child: Timeline.tileBuilder(
-        theme: TimelineThemeData(
-          nodeItemOverlap: true,
-          connectorTheme: ConnectorThemeData(thickness: 4.0, indent: 0, space: 0),
-          direction: Axis.horizontal,
-        ),
-        padding: EdgeInsets.all(16),
-        builder: TimelineTileBuilder.connected(
-          indicatorBuilder: (context, index) {
-            return ContainerIndicator(
-              child: Container(
-                width: 400,
-                child: Center(
-                  child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white, borderRadius: BorderRadius.circular(100), border: Border.all(color: Get.theme.primaryColorDark,width: 2)),
-                      padding: EdgeInsets.all(12),
-                      child: Image(
-                        image: experiences[index].companyLogo,
-                        width: 56,
-                        height: 56,
-                        fit: BoxFit.fill,
-                      )),
+    return Container(
+      width: Get.width,
+      height: 400,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: [
+          Container(
+            width: 436,
+            child: CustomPaint(
+              painter: CurveLinePainter(DrawPosition.bottom),
+              child: Container(),
+            ),
+          ),
+          ListView.builder(
+            itemBuilder: (context, i) {
+              return Container(
+                width: 500,
+                child: Stack(
+                  children: [
+                    Align(
+                        alignment: Alignment.center,
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 64,
+                              height: 64,
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: Get.theme.primaryColorDark, width: 3),
+                                  borderRadius: BorderRadius.circular(1000)),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(1000),
+                                child: Image(
+                                  image: experiences[i].companyLogo,
+                                  height: 48,
+                                  width: 48,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              width: 436,
+                              height: 250,
+                              child: CustomPaint(
+                                painter: CurveLinePainter(i % 2 == 0 ? DrawPosition.top : DrawPosition.bottom),
+                              ),
+                            ),
+                          ],
+                        )),
+                    Align(
+                        alignment: i % 2 != 0 ?Alignment.topLeft:Alignment.bottomLeft,
+                        child: Container(
+                          width: 200,
+                          height: 200,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage(i % 2 != 0 ?"assets/images/experience_card_top.png":"assets/images/experience_card_top.png"),
+                                  fit: BoxFit.fill,
+                              )
+                          ),
+                          margin: i % 2 != 0 ?EdgeInsets.fromLTRB(36, 0, 0, 84):EdgeInsets.fromLTRB(36, 84, 0, 0 ),
+                          child: Container(
+                            child: Padding(
+                              padding: const EdgeInsets.all(24.0),
+                              child: Column(
+                                children: [
+                                  Container(
+                                    height: 40,
+                                    child: Text(experiences[i].companyTitle,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    ),
+                                  ),
+                                  Text(experiences[i].jobPosition),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ))
+                  ],
                 ),
-              ),
-            );
-          },
-          connectorBuilder: (context, index, connectorType) {
-            return Connector.dashedLine(
-              color: Get.theme.primaryColorDark,
-            );
-          },
-          contentsBuilder: (context, index) {
-            return Container(
-              width: 400,
-              padding: EdgeInsets.fromLTRB(80,32,0,0),
-              child: Center(child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(experiences[index].jobPosition,style: TextStyle(
-                      color: Get.theme.primaryColorDark,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600
-                  ),),
-                  SizedBox(height: 16,),
-                  Text(experiences[index].companyTitle,style: TextStyle(
-                      color: Colors.black87,
-                      fontWeight: FontWeight.w600
-                  ),),
-                  SizedBox(height: 16,),
-                  Text("${experiences[index].startDate} - ${experiences[index].endDate}",style: TextStyle(
-                    color: Get.theme.accentColor,
-                  ),),
-                  SizedBox(height: 16,),
-                  Text(experiences[index].workplaces.name),
-                ],
-              )),
-            );
-          },
-          itemCount: experiences.length,
-        ),
+              );
+            },
+            itemCount: experiences.length,
+            shrinkWrap: true,
+            scrollDirection: Axis.horizontal,
+          ),
+        ],
       ),
     );
   }
@@ -84,4 +108,3 @@ import '../../domain/entities/experience.dart';
     return Text("");
   }
 }
-

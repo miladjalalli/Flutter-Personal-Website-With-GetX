@@ -8,6 +8,7 @@ import 'package:miladjalali_ir/presentation/controllers/projects_controller.dart
 import 'package:miladjalali_ir/presentation/widgets/experience_time_line_widget.dart';
 
 import '../../domain/entities/experience.dart';
+import '../widgets/experience_background_painter.dart';
 
 
 class ExperiencesPage extends GetResponsiveView<ExperiencesController> {
@@ -20,10 +21,10 @@ class ExperiencesPage extends GetResponsiveView<ExperiencesController> {
         color: Colors.white,
         width: Get.width,
         height: Get.height,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Stack(
           children: [
-            ExprienceTimeLineWidget(controller.experiences.value),
+            CustomPaint(painter: ExperienceBackgroundPainter(Colors.white), size: Size.infinite),
+            Center(child: ExprienceTimeLineWidget(controller.experiences.value)),
           ],
         ),
       ),

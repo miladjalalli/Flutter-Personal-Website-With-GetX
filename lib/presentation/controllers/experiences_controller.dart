@@ -46,5 +46,25 @@ class ExperiencesController extends GetxController with GetTickerProviderStateMi
         jobType: JobType.fullTime,
         workplaces: Workplaces.onSite,
         description: ""));
+
+    experiences.add(Experience(
+        companyTitle: "Nicode",
+        companyLogo: AssetImage("assets/images/nicode.jpg"),
+        startDate: "08/07/2022",
+        endDate: "08/07/2022",
+        jobPosition: "Android Developer",
+        jobType: JobType.fullTime,
+        workplaces: Workplaces.onSite,
+        description: ""));
+
+    experiences.add(Experience(
+        companyTitle: "Nicode",
+        companyLogo: AssetImage("assets/images/nicode.jpg"),
+        startDate: "08/07/2022",
+        endDate: "08/07/2022",
+        jobPosition: "Android Developer",
+        jobType: JobType.fullTime,
+        workplaces: Workplaces.onSite,
+        description: ""));
   }
 }
