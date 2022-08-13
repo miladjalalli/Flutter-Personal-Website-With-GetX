@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class ExperienceBackgroundPainter extends CustomPainter {
+class ExperienceBackgroundPainterForMobile extends CustomPainter {
   Color color;
 
-  ExperienceBackgroundPainter(this.color);
+  ExperienceBackgroundPainterForMobile(this.color);
 
 
   @override
@@ -28,9 +28,9 @@ class ExperienceBackgroundPainter extends CustomPainter {
     path.moveTo(size.width, size.height);
     path.lineTo(0, size.height);
     path.quadraticBezierTo(
-        size.width / 4, size.height - 96, size.width / 2, size.height - 60);
+        size.width / 4, size.height - 96, size.width / 2, size.height - 80);
     path.quadraticBezierTo(
-        3 / 4 * size.width, size.height, size.width, size.height - 130);
+        3 / 4 * size.width, size.height - 60, size.width, size.height - 130);
     path.lineTo(size.width, size.height -64);
     path.close();
 
@@ -53,5 +53,5 @@ class ExperienceBackgroundPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant ExperienceBackgroundPainter oldDelegate) => false;
+  bool shouldRepaint(covariant ExperienceBackgroundPainterForMobile oldDelegate) => false;
 }

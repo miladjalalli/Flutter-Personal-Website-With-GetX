@@ -42,7 +42,7 @@ class Navbar extends GetResponsiveView<HomeController> {
                     text: TextSpan(
                       text: 'Milad',
                       style: Styles.navBarTextStyle.copyWith(
-                        color: controller.navBarSelectedIndex.value==1?Colors.white:Colors.black.withOpacity(0.75),
+                        color: (controller.navBarSelectedIndex.value==1 || controller.navBarSelectedIndex.value==2)?Colors.white:Colors.black.withOpacity(0.75),
                         fontSize: 18,
                         fontFamily: 'Ubuntu',
                       ),

@@ -38,7 +38,7 @@ class InformationPage extends GetResponsiveView<InformationController> {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Typewriter(
-                                'Hello ...',
+                                'Hello ... My name is',
                                 animate: !controller.helloSeen.value,
                                 textStyle: TextStyle(
                                   color: Colors.lightBlue,
@@ -171,7 +171,7 @@ class InformationPage extends GetResponsiveView<InformationController> {
                                     height: Get.height / 3 / 10,
                                   ),
                                   Typewriter(
-                                    'Hello ...',
+                                    'Hello ... My name is',
                                     animate: !controller.helloSeen.value,
                                     textStyle: TextStyle(
                                       color: Colors.lightBlue,

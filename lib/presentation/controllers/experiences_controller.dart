@@ -28,13 +28,13 @@ class ExperiencesController extends GetxController with GetTickerProviderStateMi
 
   void addExperiences() {
     experiences.add(Experience(
-        companyTitle: "Nicode",
-        companyLogo: AssetImage("assets/images/nicode.jpg"),
-        startDate: "08/07/2022",
-        endDate: "08/07/2022",
-        jobPosition: "Android Developer",
-        jobType: JobType.fullTime,
-        workplaces: Workplaces.onSite,
+        companyTitle: "Irisa",
+        companyLogo: AssetImage("assets/images/irisa.jpg"),
+        startDate: "08/06/2016",
+        endDate: "08/08/2016",
+        jobPosition: "Android Intern",
+        jobType: JobType.internship,
+        workplaces: Workplaces.hybrid,
         description: ""));
 
     experiences.add(Experience(
