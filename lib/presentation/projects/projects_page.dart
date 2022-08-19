@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:miladjalali_ir/presentation/controllers/projects_controller.dart';
+import 'projects_controller.dart';
 
 
 class ProjectsPage extends GetResponsiveView<ProjectsController> {

@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:miladjalali_ir/presentation/controllers/about_binding.dart';
-import 'package:miladjalali_ir/presentation/controllers/about_controller.dart';
-import 'package:miladjalali_ir/presentation/controllers/experiences_binding.dart';
-import 'package:miladjalali_ir/presentation/controllers/home_binding.dart';
-import 'package:miladjalali_ir/presentation/controllers/information_binding.dart';
-import 'package:miladjalali_ir/presentation/controllers/information_controller.dart';
-import 'package:miladjalali_ir/presentation/controllers/projets_binding.dart';
-import 'package:miladjalali_ir/presentation/pages/about_page.dart';
-import 'package:miladjalali_ir/presentation/pages/experiences_page.dart';
-import 'package:miladjalali_ir/presentation/pages/information_page.dart';
-
-import '../pages/projects_page.dart';
+import 'package:miladjalali_ir/presentation/experiences/experiences_binding.dart';
+import 'package:miladjalali_ir/presentation/information/information_binding.dart';
+import 'package:miladjalali_ir/presentation/information/information_page.dart';
+import '../about/about_binding.dart';
+import '../about/about_page.dart';
+import '../experiences/experiences_page.dart';
+import '../information/information_controller.dart';
+import '../projects/projects_page.dart';
+import '../projects/projets_binding.dart';
 
 class HomeController extends GetxController {
 

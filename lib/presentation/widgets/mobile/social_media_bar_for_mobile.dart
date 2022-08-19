@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:miladjalali_ir/app/util/url_helper.dart';
 
-import '../../app/constants/social_icons.dart';
+import 'package:miladjalali_ir/app/constants/social_icons.dart';
 
 class SocialMediaBarForMobile extends StatefulWidget {
   const SocialMediaBarForMobile({Key? key}) : super(key: key);

@@ -1,11 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:miladjalali_ir/domain/entities/experience.dart';
-import 'package:miladjalali_ir/domain/entities/portfolio.dart';
 
 import '../../app/constants/job_type.dart';
 import '../../app/constants/work_places.dart';
-import '../widgets/portfolio_widget.dart';
 
 class ExperiencesController extends GetxController with GetTickerProviderStateMixin {
   RxList<Experience> experiences = <Experience>[].obs;

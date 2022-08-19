@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:miladjalali_ir/app/util/url_helper.dart';
-import 'package:miladjalali_ir/presentation/controllers/information_controller.dart';
-import 'package:miladjalali_ir/presentation/widgets/hero_images.dart';
-import 'package:miladjalali_ir/presentation/widgets/home_background_painter.dart';
-import 'package:miladjalali_ir/presentation/widgets/social_media_bar_for_mobile.dart';
-
-import '../widgets/home_background_painter_for_mobile.dart';
-import '../widgets/rounded_button.dart';
-import '../widgets/social_media_bar.dart';
-import '../widgets/typewriter.dart';
+import '../widgets/common./rounded_button.dart';
+import '../widgets/common/hero_images.dart';
+import '../widgets/common/home_background_painter.dart';
+import '../widgets/mobile/home_background_painter_for_mobile.dart';
+import '../widgets/mobile/social_media_bar_for_mobile.dart';
+import 'information_controller.dart';
+import '../widgets/common/social_media_bar.dart';
+import '../widgets/common/typewriter.dart';
 
 class InformationPage extends GetResponsiveView<InformationController> {
   InformationPage() : super(settings: ResponsiveScreenSettings(desktopChangePoint: 1000, tabletChangePoint: 768, watchChangePoint: 300));

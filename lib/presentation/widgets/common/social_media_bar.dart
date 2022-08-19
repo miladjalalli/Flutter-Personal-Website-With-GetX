@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:miladjalali_ir/app/util/url_helper.dart';
 
-import '../../app/constants/social_icons.dart';
+import '../../../app/constants/social_icons.dart';
 
 class SocialMediaBar extends StatelessWidget {
   @override

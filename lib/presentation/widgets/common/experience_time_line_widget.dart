@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../domain/entities/experience.dart';
+import 'package:miladjalali_ir/domain/entities/experience.dart';
 import 'curve_line_painter.dart';
 import 'experience_card_painter.dart';
 

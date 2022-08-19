@@ -5,8 +5,8 @@ import 'package:cached_network_image_platform_interface/cached_network_image_pla
 import 'package:flutter/material.dart';
 import 'package:flutter_blurhash/flutter_blurhash.dart';
 import 'package:get/get.dart';
-import 'package:miladjalali_ir/presentation/controllers/about_controller.dart';
-import 'package:miladjalali_ir/presentation/widgets/web_video_control.dart';
+import 'package:miladjalali_ir/presentation/about/about_controller.dart';
+import 'package:miladjalali_ir/presentation/widgets/common/web_video_control.dart';
 import 'package:video_player/video_player.dart';
 
 class AboutPage extends GetResponsiveView<AboutController> {

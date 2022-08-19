@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:miladjalali_ir/app/util/url_helper.dart';
-import 'package:miladjalali_ir/presentation/controllers/home_controller.dart';
-import 'package:miladjalali_ir/presentation/widgets/rounded_button.dart';
+import 'package:miladjalali_ir/presentation/home/home_controller.dart';
+import 'package:miladjalali_ir/presentation/widgets/common/rounded_button.dart';
 
-import '../../app/util/styles.dart';
+import 'package:miladjalali_ir/app/util/styles.dart';
 
 class Navbar extends GetResponsiveView<HomeController> {
 

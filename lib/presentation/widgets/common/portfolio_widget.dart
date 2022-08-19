@@ -2,8 +2,8 @@ import 'package:fading_images_slider/fading_images_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mj_image_slider/mj_image_slider.dart';
-import '../../app/util/url_helper.dart';
-import '../../domain/entities/portfolio.dart';
+import 'package:miladjalali_ir/app/util/url_helper.dart';
+import 'package:miladjalali_ir/domain/entities/portfolio.dart';
 import 'home_background_painter.dart';
 import 'typewriter.dart';
 

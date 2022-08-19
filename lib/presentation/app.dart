@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:miladjalali_ir/presentation/controllers/home_binding.dart';
-import 'package:miladjalali_ir/presentation/pages/home_page.dart';
+import 'package:miladjalali_ir/presentation/home/home_binding.dart';
+import 'package:miladjalali_ir/presentation/home/home_page.dart';
 
 import '../app/util/web_scroll_behavior.dart';
 

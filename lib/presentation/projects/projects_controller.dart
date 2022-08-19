@@ -1,10 +1,8 @@
-import 'dart:ui';
-
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:miladjalali_ir/domain/entities/portfolio.dart';
 
-import '../widgets/portfolio_widget.dart';
+import '../widgets/common/portfolio_widget.dart';
+
 
 class ProjectsController extends GetxController with GetTickerProviderStateMixin {
   late List<PortfolioWidget> portfolios;

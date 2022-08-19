@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:miladjalali_ir/presentation/widgets/curve_line_painter.dart';
+import 'package:miladjalali_ir/presentation/widgets/common/curve_line_painter.dart';
 import 'package:path_drawing/path_drawing.dart';
 
 class ExperienceCardPainter extends CustomPainter {

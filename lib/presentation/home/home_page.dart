@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:miladjalali_ir/presentation/controllers/home_controller.dart';
-import 'package:miladjalali_ir/presentation/widgets/drawer.dart';
+import 'package:miladjalali_ir/presentation/home/home_controller.dart';
 import 'dart:html' as html;
-import '../widgets/nav_bar.dart';
+import '../widgets/common/nav_bar.dart';
+import '../widgets/mobile/drawer.dart';
 
 class HomePage extends GetResponsiveView<HomeController> {
 

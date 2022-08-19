@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:miladjalali_ir/app/constants/job_type.dart';
-import 'package:miladjalali_ir/app/constants/timeline_status.dart';
-import 'package:miladjalali_ir/app/constants/work_places.dart';
-import 'package:miladjalali_ir/presentation/controllers/experiences_controller.dart';
-import 'package:miladjalali_ir/presentation/controllers/projects_controller.dart';
-import 'package:miladjalali_ir/presentation/widgets/experience_background_painter_for_mobile.dart';
-import 'package:miladjalali_ir/presentation/widgets/experience_time_line_widget.dart';
-
-import '../../domain/entities/experience.dart';
-import '../widgets/experience_background_painter.dart';
+import 'package:miladjalali_ir/presentation/widgets/mobile/experience_background_painter_for_mobile.dart';
+import '../widgets/common/experience_background_painter.dart';
+import '../widgets/common/experience_time_line_widget.dart';
+import 'experiences_controller.dart';
 
 
 class ExperiencesPage extends GetResponsiveView<ExperiencesController> {
