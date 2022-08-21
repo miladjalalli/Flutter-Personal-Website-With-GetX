@@ -26,7 +26,7 @@ class Navbar extends GetResponsiveView<HomeController> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   CircleAvatar(
-                    backgroundColor: Colors.orange,
+                    backgroundColor: Get.theme.accentColor,
                     radius: 15,
                     child: Text(
                       'M',
@@ -50,7 +50,7 @@ class Navbar extends GetResponsiveView<HomeController> {
                         TextSpan(
                           text: ' Jalali',
                           style: Styles.navBarTextStyle.copyWith(
-                            color: Colors.orange,
+                            color: Get.theme.accentColor,
                             fontSize: 18,
                             fontFamily: 'Ubuntu',
                           ),

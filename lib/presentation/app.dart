@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:miladjalali_ir/app/constants/themes.dart';
 import 'package:miladjalali_ir/presentation/home/home_binding.dart';
 import 'package:miladjalali_ir/presentation/home/home_page.dart';
 
@@ -12,7 +13,7 @@ class App extends StatelessWidget {
       initialRoute: "/",
       initialBinding: HomeBinding(),
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primaryColor: Colors.lightBlue, primaryColorDark: Colors.blue, accentColor: Colors.orange),
+      theme: Themes.themeBlueOrange,
       scrollBehavior: WebScrollBehavior(),
       home: HomePage(),
     );

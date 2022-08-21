@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:miladjalali_ir/app/util/url_helper.dart';
-
-import 'package:miladjalali_ir/app/constants/social_icons.dart';
 
 class SocialMediaBarForMobile extends StatefulWidget {
   const SocialMediaBarForMobile({Key? key}) : super(key: key);
@@ -56,7 +55,7 @@ class _SocialMediaBarForMobileState extends State<SocialMediaBarForMobile> {
                         UrlHelper.launchUrl('https://github.com/miladjalalli');
                       },
                       child: Icon(
-                        SocialIcons.github,
+                        FontAwesomeIcons.github,
                         color: Colors.lightBlue.withOpacity(0.75),
                       ),
                     ),
@@ -70,7 +69,7 @@ class _SocialMediaBarForMobileState extends State<SocialMediaBarForMobile> {
                         );
                       },
                       child: Icon(
-                        SocialIcons.linkedin,
+                        FontAwesomeIcons.linkedin,
                         color: Colors.lightBlue.withOpacity(0.75),
                       ),
                     ),
@@ -84,7 +83,7 @@ class _SocialMediaBarForMobileState extends State<SocialMediaBarForMobile> {
                         );
                       },
                       child: Icon(
-                        SocialIcons.envelope,
+                        Icons.mail_outline,
                         color: Colors.lightBlue.withOpacity(0.75),
                       ),
                     ),
@@ -96,7 +95,7 @@ class _SocialMediaBarForMobileState extends State<SocialMediaBarForMobile> {
                         UrlHelper.launchUrl('https://stackoverflow.com/users/8349963');
                       },
                       child: Icon(
-                        SocialIcons.stackOverFlow,
+                        FontAwesomeIcons.stackOverflow,
                         color: Colors.lightBlue.withOpacity(0.75),
                       ),
                     ),
@@ -108,7 +107,7 @@ class _SocialMediaBarForMobileState extends State<SocialMediaBarForMobile> {
                         UrlHelper.launchUrl('https://www.instagram.com/miladjalali.ir/');
                       },
                       child: Icon(
-                        SocialIcons.instagram,
+                        FontAwesomeIcons.instagram,
                         color: Colors.lightBlue.withOpacity(0.75),
                       ),
                     ),
@@ -120,7 +119,7 @@ class _SocialMediaBarForMobileState extends State<SocialMediaBarForMobile> {
                         UrlHelper.launchUrl('https://medium.com/@miladjalali');
                       },
                       child: Icon(
-                        SocialIcons.medium,
+                        FontAwesomeIcons.medium,
                         color: Colors.lightBlue.withOpacity(0.75),
                       ),
                     ),
@@ -132,7 +131,7 @@ class _SocialMediaBarForMobileState extends State<SocialMediaBarForMobile> {
                         UrlHelper.launchUrl('https://wa.link/ggxmai');
                       },
                       child: Icon(
-                        SocialIcons.whatsapp,
+                        FontAwesomeIcons.whatsapp,
                         color: Colors.lightBlue.withOpacity(0.75),
                       ),
                     ),

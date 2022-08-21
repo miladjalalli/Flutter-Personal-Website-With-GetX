@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:miladjalali_ir/presentation/experiences/experiences_binding.dart';
 import 'package:miladjalali_ir/presentation/information/information_binding.dart';
 import 'package:miladjalali_ir/presentation/information/information_page.dart';
+import '../../app/constants/themes.dart';
 import '../about/about_binding.dart';
 import '../about/about_page.dart';
 import '../experiences/experiences_page.dart';
@@ -33,15 +34,19 @@ class HomeController extends GetxController {
     switch(selectedIndex.value){
       case 0:
         InformationBinding().dependencies();
+        Get.changeTheme(Themes.themeBlueOrange);
         break;
       case 1:
         AboutBinding().dependencies();
+        Get.changeTheme(Themes.themeBlackOrange);
         break;
       case 2:
         ExperiencesBinding().dependencies();
+        Get.changeTheme(Themes.themePurpleOrange);
         break;
       case 3:
         ProjectsBinding().dependencies();
+        Get.changeTheme(Themes.themeOrangeOrange);
         break;
     }
   }
