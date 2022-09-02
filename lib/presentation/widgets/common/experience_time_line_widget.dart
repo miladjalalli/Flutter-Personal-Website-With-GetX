@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:miladjalali_ir/app/constants/job_type.dart';
+import 'package:miladjalali_ir/app/constants/work_places.dart';
 
 import 'package:miladjalali_ir/domain/entities/experience.dart';
 import 'curve_line_painter.dart';
@@ -74,36 +76,62 @@ class ExprienceTimeLineWidget extends GetResponsiveView {
                           child: Container(
                             child: Padding(
                               padding: const EdgeInsets.all(24.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                              child: Stack(
                                 children: [
-                                  Container(
-                                    height: 40,
-                                    margin: EdgeInsets.only(top:  i % 2 != 0?0:48),
-                                    child: Text(experiences[i].companyTitle,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.white
-                                    ),
-                                    ),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+
+                                      Container(
+                                        margin: EdgeInsets.only(top:  i % 2 != 0?0:28,bottom: 8),
+                                        child: Text(experiences[i].jobPosition,
+                                          style: TextStyle(
+                                              color: Colors.white
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(height: 4,),
+                                      Text(experiences[i].startDate,
+                                        style: TextStyle(
+                                            color: Colors.white
+                                        ),
+                                      ),
+                                      SizedBox(height: 4,),
+                                      Text(experiences[i].endDate,
+                                        style: TextStyle(
+                                            color: Colors.white
+                                        ),
+                                      ),
+                                      SizedBox(height: 4,),
+                                      Text(experiences[i].workplaces.getName,
+                                        style: TextStyle(
+                                            color: Colors.white
+                                        ),
+                                      ),
+                                      SizedBox(height: 4,),
+                                      Text(experiences[i].jobType.getName,
+                                        style: TextStyle(
+                                            color: Colors.white
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  Text(experiences[i].jobPosition,
-                                    style: TextStyle(
-                                        color: Colors.white
+                                  Align(
+                                    alignment: Alignment.centerRight,
+                                    child: Container(
+                                      margin: EdgeInsets.only(right: 4),
+                                      child: RotatedBox(
+                                        quarterTurns: 1,
+                                        child:Text(experiences[i].companyTitle,
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.white,
+                                          fontSize: 16
+                                        ),
+                                      ),
+                                      ),
                                     ),
-                                  ),
-                                  SizedBox(height: 4,),
-                                  Text(experiences[i].startDate,
-                                    style: TextStyle(
-                                        color: Colors.white
-                                    ),
-                                  ),
-                                  SizedBox(height: 4,),
-                                  Text(experiences[i].endDate,
-                                    style: TextStyle(
-                                        color: Colors.white
-                                    ),
-                                  ),
+                                  )
                                 ],
                               ),
                             ),
@@ -148,8 +176,8 @@ class ExprienceTimeLineWidget extends GetResponsiveView {
                         child: Row(
                           children: [
                             Container(
-                              width: 64,
-                              height: 64,
+                              width: 48,
+                              height: 48,
                               decoration: BoxDecoration(
                                   border: Border.all(color: Color(0XFF003140), width: 3),
                                   borderRadius: BorderRadius.circular(1000)),
@@ -157,8 +185,8 @@ class ExprienceTimeLineWidget extends GetResponsiveView {
                                 borderRadius: BorderRadius.circular(1000),
                                 child: Image(
                                   image: experiences[i].companyLogo,
-                                  height: 48,
-                                  width: 48,
+                                  height: 36,
+                                  width: 36,
                                 ),
                               ),
                             ),
@@ -174,8 +202,8 @@ class ExprienceTimeLineWidget extends GetResponsiveView {
                     Align(
                         alignment: i % 2 != 0 ?Alignment.topLeft:Alignment.bottomLeft,
                         child: Container(
-                          width: 200,
-                          height: 200,
+                          width: 160,
+                          height: 160,
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                 image: AssetImage(i % 2 != 0 ?"assets/images/experience_card_top.png":"assets/images/experience_card_bottom.png"),
@@ -186,36 +214,62 @@ class ExprienceTimeLineWidget extends GetResponsiveView {
                           child: Container(
                             child: Padding(
                               padding: const EdgeInsets.all(24.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                              child: Stack(
                                 children: [
-                                  Container(
-                                    height: 40,
-                                    margin: EdgeInsets.only(top:  i % 2 != 0?0:48),
-                                    child: Text(experiences[i].companyTitle,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w600,
-                                          color: Colors.white
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+
+                                      Container(
+                                        margin: EdgeInsets.only(top:  i % 2 != 0?0:28,bottom: 8),
+                                        child: Text(experiences[i].jobPosition,
+                                          style: TextStyle(
+                                              color: Colors.white
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(height: 4,),
+                                      Text(experiences[i].startDate,
+                                        style: TextStyle(
+                                            color: Colors.white
+                                        ),
+                                      ),
+                                      SizedBox(height: 4,),
+                                      Text(experiences[i].endDate,
+                                        style: TextStyle(
+                                            color: Colors.white
+                                        ),
+                                      ),
+                                      SizedBox(height: 4,),
+                                      Text(experiences[i].workplaces.getName,
+                                        style: TextStyle(
+                                            color: Colors.white
+                                        ),
+                                      ),
+                                      SizedBox(height: 4,),
+                                      Text(experiences[i].jobType.getName,
+                                        style: TextStyle(
+                                            color: Colors.white
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Align(
+                                    alignment: Alignment.centerRight,
+                                    child: Container(
+                                      margin: EdgeInsets.only(right: 4),
+                                      child: RotatedBox(
+                                        quarterTurns: 1,
+                                        child:Text(experiences[i].companyTitle,
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w600,
+                                              color: Colors.white,
+                                              fontSize: 16
+                                          ),
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  Text(experiences[i].jobPosition,
-                                    style: TextStyle(
-                                        color: Colors.white
-                                    ),
-                                  ),
-                                  SizedBox(height: 4,),
-                                  Text(experiences[i].startDate,
-                                    style: TextStyle(
-                                        color: Colors.white
-                                    ),
-                                  ),
-                                  SizedBox(height: 4,),
-                                  Text(experiences[i].endDate,
-                                    style: TextStyle(
-                                        color: Colors.white
-                                    ),
-                                  ),
+                                  )
                                 ],
                               ),
                             ),

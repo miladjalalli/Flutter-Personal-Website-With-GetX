@@ -37,11 +37,6 @@ class AppDrawer extends GetView<HomeController>{
                     switch (item) {
                       case 'Resume':
                         break;
-                      case 'Blog':
-                        UrlHelper.launchUrl(
-                          'https://medium.com/@miladjalali',
-                        );
-                        break;
                       default:
                         controller.navBarSelectedIndex.value = controller.items.indexOf(item);
                         controller.onNavbarItemSelected(controller.navBarSelectedIndex.toInt());

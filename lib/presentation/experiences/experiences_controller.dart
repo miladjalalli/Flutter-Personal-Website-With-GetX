@@ -38,8 +38,8 @@ class ExperiencesController extends GetxController with GetTickerProviderStateMi
     experiences.add(Experience(
         companyTitle: "Nicode",
         companyLogo: AssetImage("assets/images/nicode.jpg"),
-        startDate: "08/07/2022",
-        endDate: "08/07/2022",
+        startDate: "22/05/2018",
+        endDate: "23/10/2019",
         jobPosition: "Android Developer",
         jobType: JobType.fullTime,
         workplaces: Workplaces.onSite,
@@ -48,21 +48,33 @@ class ExperiencesController extends GetxController with GetTickerProviderStateMi
     experiences.add(Experience(
         companyTitle: "Nicode",
         companyLogo: AssetImage("assets/images/nicode.jpg"),
-        startDate: "08/07/2022",
-        endDate: "08/07/2022",
-        jobPosition: "Android Developer",
+        startDate: "23/10/2019",
+        endDate: "21/03/2022",
+        jobPosition: "Flutter Developer",
         jobType: JobType.fullTime,
         workplaces: Workplaces.onSite,
         description: ""));
 
+
     experiences.add(Experience(
         companyTitle: "Nicode",
         companyLogo: AssetImage("assets/images/nicode.jpg"),
-        startDate: "08/07/2022",
-        endDate: "08/07/2022",
-        jobPosition: "Android Developer",
-        jobType: JobType.fullTime,
-        workplaces: Workplaces.onSite,
+        startDate: "21/03/2022",
+        endDate: "Present",
+        jobPosition: "Flutter Developer",
+        jobType: JobType.partTime,
+        workplaces: Workplaces.hybrid,
         description: ""));
+
+    experiences.add(Experience(
+        companyTitle: "Uplance",
+        companyLogo: AssetImage("assets/images/uplance.jpg"),
+        startDate: "21/03/2021",
+        endDate: "Present",
+        jobPosition: "Flutter Developer",
+        jobType: JobType.contract,
+        workplaces: Workplaces.remote,
+        description: ""));
+
   }
 }

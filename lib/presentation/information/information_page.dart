@@ -148,6 +148,7 @@ class InformationPage extends GetResponsiveView<InformationController> {
                 Center(
                   child: Column(
                     children: [
+                      SizedBox(height: 32,),
                       Expanded(
                         flex: 4,
                         child: HeroImage(),
