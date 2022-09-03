@@ -6,6 +6,7 @@ import 'package:miladjalali_ir/presentation/widgets/common/no_post_widget.dart';
 
 import '../widgets/common/blog_background_painter.dart';
 import '../widgets/common/blog_post_item.dart';
+import '../widgets/mobile/blog_background_painter_for_mobile.dart';
 
 class BlogPage extends GetResponsiveView<BlogController> {
   BlogPage()
@@ -70,7 +71,7 @@ class BlogPage extends GetResponsiveView<BlogController> {
                   return BlogPostItem(controller.mediumPostsResponse!.value!.items![index]);
                 }),
           ),
-          CustomPaint(painter: BlogBackgroundPainter(), size: Size.infinite),
+          CustomPaint(painter: ExperienceBackgroundPainterForMobile(), size: Size.infinite),
         ],
       )),
     );

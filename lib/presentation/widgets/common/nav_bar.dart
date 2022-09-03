@@ -126,7 +126,7 @@ class Navbar extends GetResponsiveView<HomeController> {
       padding: const EdgeInsets.fromLTRB(16,0,16,0),
       child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             IconButton(
               color: Colors.white,
@@ -137,6 +137,36 @@ class Navbar extends GetResponsiveView<HomeController> {
               onPressed: () {
                 controller.scaffoldKey.currentState?.openEndDrawer();
               },
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(8,0,16,0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(
+                      text: 'Milad',
+                      style: Styles.navBarTextStyle.copyWith(
+                        color: (controller.navBarSelectedIndex.value==1 || controller.navBarSelectedIndex.value==2)?Colors.white:Colors.black.withOpacity(0.75),
+                        fontSize: 18,
+                        fontFamily: 'Ubuntu',
+                      ),
+                      children: [
+                        TextSpan(
+                          text: ' Jalali',
+                          style: Styles.navBarTextStyle.copyWith(
+                            color: Get.theme.accentColor,
+                            fontSize: 18,
+                            fontFamily: 'Ubuntu',
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
             Expanded(child: Text("")),
           ],

@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 
 @immutable
 class RoundedButtonByIcon extends StatelessWidget {
- final Color color;
- final IconData icon;
- final Function onTap;
+  final Color color;
+  final IconData icon;
+  final Function onTap;
 
-
-  RoundedButtonByIcon(this.color,this.icon, this.onTap);
+  RoundedButtonByIcon(this.color, this.icon, this.onTap);
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +16,7 @@ class RoundedButtonByIcon extends StatelessWidget {
           onTap: () async {
             onTap();
           },
-          child: FlatButton(
-            shape: RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(100.0),
-                side: BorderSide(color: Colors.black)),
-            color: Colors.black,
+          child: TextButton(
             child: Padding(
               padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
               child: Row(
@@ -36,7 +31,12 @@ class RoundedButtonByIcon extends StatelessWidget {
                 ],
               ),
             ),
-            onPressed: () async{
+            style: ButtonStyle(
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
+                  borderRadius: new BorderRadius.circular(100.0), side: BorderSide(color: Colors.black))),
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
+            ),
+            onPressed: () async {
               onTap();
             },
           ),

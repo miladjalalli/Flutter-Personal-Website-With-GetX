@@ -221,35 +221,40 @@ class ExprienceTimeLineWidget extends GetResponsiveView {
                                     children: [
 
                                       Container(
-                                        margin: EdgeInsets.only(top:  i % 2 != 0?0:28,bottom: 8),
+                                        margin: EdgeInsets.only(top:  i % 2 != 0?0:12,bottom: 8),
                                         child: Text(experiences[i].jobPosition,
                                           style: TextStyle(
-                                              color: Colors.white
+                                              color: Colors.white,
+                                            fontSize: 12
                                           ),
                                         ),
                                       ),
-                                      SizedBox(height: 4,),
+                                      SizedBox(height: 2,),
                                       Text(experiences[i].startDate,
                                         style: TextStyle(
-                                            color: Colors.white
+                                            color: Colors.white,
+                                            fontSize: 12
                                         ),
                                       ),
-                                      SizedBox(height: 4,),
+                                      SizedBox(height: 2,),
                                       Text(experiences[i].endDate,
                                         style: TextStyle(
-                                            color: Colors.white
+                                            color: Colors.white,
+                                            fontSize: 12
                                         ),
                                       ),
-                                      SizedBox(height: 4,),
+                                      SizedBox(height: 2,),
                                       Text(experiences[i].workplaces.getName,
                                         style: TextStyle(
-                                            color: Colors.white
+                                            color: Colors.white,
+                                            fontSize: 12
                                         ),
                                       ),
-                                      SizedBox(height: 4,),
+                                      SizedBox(height: 2,),
                                       Text(experiences[i].jobType.getName,
                                         style: TextStyle(
-                                            color: Colors.white
+                                            color: Colors.white,
+                                            fontSize: 12
                                         ),
                                       ),
                                     ],
@@ -257,7 +262,7 @@ class ExprienceTimeLineWidget extends GetResponsiveView {
                                   Align(
                                     alignment: Alignment.centerRight,
                                     child: Container(
-                                      margin: EdgeInsets.only(right: 4),
+                                      margin: EdgeInsets.only(right: 4,top: 8),
                                       child: RotatedBox(
                                         quarterTurns: 1,
                                         child:Text(experiences[i].companyTitle,

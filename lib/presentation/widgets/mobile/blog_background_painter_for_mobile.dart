@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ExperienceBackgroundPainterForMobile extends CustomPainter {
-  Color color;
-
-  ExperienceBackgroundPainterForMobile(this.color);
-
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -42,10 +38,10 @@ class ExperienceBackgroundPainterForMobile extends CustomPainter {
       begin: Alignment.topRight,
       end: Alignment.bottomLeft,
       colors: [
-        Color(0XFF003140),
-        Color(0XFF003140),
-        Color(0XFF003140),
-        Color(0XFF003140),
+        Colors.black54,
+        Colors.black54,
+        Colors.black54,
+        Colors.black54,
       ],
     ).createShader(rect);
 
