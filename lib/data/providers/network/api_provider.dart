@@ -1,7 +1,10 @@
 import 'dart:async';
 import 'dart:io';
+import 'package:either_dart/either.dart';
 import 'package:get/get_connect/connect.dart';
 import 'package:miladjalali_ir/data/providers/network/api_request_representable.dart';
+
+import '../../../domain/entities/unsplash_search_response.dart';
 
 class APIProvider {
   static const requestTimeOut = Duration(seconds: 25);
@@ -11,7 +14,7 @@ class APIProvider {
 
   static APIProvider get instance => _singleton;
 
-  Future request(APIRequestRepresentable request) async {
+  Future<Either> request(APIRequestRepresentable request) async {
     try {
       final response = await _client.request(
         request.url,
@@ -22,27 +25,27 @@ class APIProvider {
       );
       return _returnResponse(response);
     } on TimeoutException catch (_) {
-      throw TimeOutException(null);
+      return Left(TimeOutException(null));
     } on SocketException {
-      throw FetchDataException('No Internet connection');
+      return Left(FetchDataException('No Internet connection'));
     }
   }
 
   dynamic _returnResponse(Response<dynamic> response) {
     switch (response.statusCode) {
       case 200:
-        return response.body;
+        return Right(response.body);
       case 400:
-        throw BadRequestException(response.body.toString());
+        return Left(BadRequestException(response.body.toString()));
       case 401:
       case 403:
-        throw UnauthorisedException(response.body.toString());
+      return Left(UnauthorisedException(response.body.toString()));
       case 404:
-        throw BadRequestException('Not found');
+        return Left(BadRequestException('Not found'));
       case 500:
-        throw FetchDataException('Internal Server Error');
+        return Left( FetchDataException('Internal Server Error'));
       default:
-        throw FetchDataException('Error occured while Communication with Server with StatusCode : ${response.statusCode}');
+        return Left(FetchDataException('Error occurred while Communication with Server with StatusCode : ${response.statusCode}'));
     }
   }
 }

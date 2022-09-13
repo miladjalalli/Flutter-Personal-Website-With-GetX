@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:miladjalali_ir/data/repositories/images_repository.dart';
+import 'package:miladjalali_ir/data/repositories/images_repository_impl.dart';
 import 'package:miladjalali_ir/domain/usecases/fetch_person_images_use_case.dart';
 import 'package:miladjalali_ir/presentation/about/about_controller.dart';
 import 'package:miladjalali_ir/presentation/home/home_controller.dart';

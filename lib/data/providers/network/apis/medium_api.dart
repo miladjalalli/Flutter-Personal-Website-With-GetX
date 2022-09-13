@@ -1,3 +1,4 @@
+import 'package:either_dart/either.dart';
 import 'package:miladjalali_ir/app/util/util.dart';
 import 'package:miladjalali_ir/data/providers/network/api_endpoint.dart';
 import 'package:miladjalali_ir/data/providers/network/api_provider.dart';
@@ -33,7 +34,7 @@ class MediumAPI implements APIRequestRepresentable {
   @override
   get body => null;
 
-  Future request() {
+  Future<Either> request() {
     return APIProvider.instance.request(this);
   }
 
