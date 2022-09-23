@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:miladjalali_ir/app/util/url_helper.dart';
-import '../widgets/common./rounded_button.dart';
+import 'package:miladjalali_ir/presentation/widgets/common/rounded_button.dart';
 import '../widgets/common/hero_images.dart';
 import '../widgets/common/home_background_painter.dart';
 import '../widgets/mobile/home_background_painter_for_mobile.dart';
