@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>For unit test only</title>
+    <item>
+        <title>Version 3.0</title>
+        <description>test description ??????</description>
+		<sparkle:version>3.0</sparkle:version>
+    </item>
+  </channel>
+</rss>
